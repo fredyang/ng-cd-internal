@@ -17,9 +17,7 @@ export class AppComponent implements OnInit,  AfterContentChecked, AfterContentI
     this.log(`dirty checking state and updating DOM if necessary`, '->');
   }
 
-  doNothing() {
-    // really doing nothing?
-  }
+  doNothing() { }
 
   tick() {
     this.applicationRef.tick();
