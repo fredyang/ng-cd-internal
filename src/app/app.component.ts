@@ -19,9 +19,6 @@ export class AppComponent implements OnInit,  AfterContentChecked, AfterContentI
 
   doNothing() { }
 
-  tick() {
-    this.applicationRef.tick();
-  }
 
   ngAfterViewChecked(): void {
     this.log(`ngAfterViewChecked`);
