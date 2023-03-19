@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ApplicationRef, Component, DoCheck, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,19 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 })
 export class AppComponent implements OnInit,  AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnChanges , DoCheck {
 
+  constructor(private applicationRef: ApplicationRef) {
+
+  }
+
   logDirtyChecking() {
     this.log(`dirty checking state and updating DOM if necessary`, '->');
   }
 
   doNothing() {}
+
+  tick() {
+    this.applicationRef.tick();
+  }
 
   log(msg: string, prefix = '') {
     console.log(`${prefix} [${this.constructor.name}] ${msg}`);
