@@ -14,7 +14,6 @@ enableProdMode();
   `,
 })
 export class App {
-  name = 'Angular';
 }
 
 bootstrapApplication(App);
