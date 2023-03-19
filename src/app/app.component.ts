@@ -4,7 +4,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  standalone: true
+  //standalone: true
 })
 export class AppComponent implements OnInit,  AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnChanges , DoCheck {
 
