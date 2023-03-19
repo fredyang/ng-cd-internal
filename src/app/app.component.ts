@@ -3,27 +3,26 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  //standalone: true
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit,  AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnChanges , DoCheck {
 
-  constructor(private applicationRef: ApplicationRef) {
+  constructor(private applicationRef: ApplicationRef) {}
 
+  log(msg: string, prefix = '') {
+    console.log(`${prefix} [${this.constructor.name}] ${msg}`);
   }
 
   logDirtyChecking() {
     this.log(`dirty checking state and updating DOM if necessary`, '->');
   }
 
-  doNothing() {}
+  doNothing() {
+    // really doing nothing?
+  }
 
   tick() {
     this.applicationRef.tick();
-  }
-
-  log(msg: string, prefix = '') {
-    console.log(`${prefix} [${this.constructor.name}] ${msg}`);
   }
 
   ngAfterViewChecked(): void {
