@@ -13,14 +13,12 @@ export class AppComponent implements OnInit,  AfterContentChecked, AfterContentI
     console.log(`${prefix} [${this.constructor.name}] ${msg}`);
   }
 
-  logDirtyChecking() {
-    this.log(`dirty checking state and updating DOM if necessary`, '->');
+  cycle() {
+    this.applicationRef.tick();
   }
 
-  doNothing() { }
-
-  tick() {
-    this.applicationRef.tick();
+  logDirtyChecking() {
+    this.log(`dirty checking state and updating DOM if necessary`, '->');
   }
 
   ngAfterViewChecked(): void {
