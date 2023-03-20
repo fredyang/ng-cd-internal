@@ -7,7 +7,7 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 })
 export class AppComponent implements OnInit,  AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, OnChanges , DoCheck {
 
-  constructor(private applicationRef: ApplicationRef) {}
+  constructor() {}
 
   log(msg: string, prefix = '') {
     console.log(`${prefix} [${this.constructor.name}] ${msg}`);
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit,  AfterContentChecked, AfterContentI
     this.log(`dirty checking state and updating DOM if necessary`, '->');
   }
 
-  doNothing() { }
+  cycle() { }
 
 
   ngAfterViewChecked(): void {
